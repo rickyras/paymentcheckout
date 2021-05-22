@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'https://rickyras.github.io/paymentcheckout';
+$YOUR_DOMAIN = 'http://rickyras.github.io/paymentcheckout';
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'payment_method_types' => ['card'],
