@@ -53,7 +53,7 @@
     return Promise.reject('*** PHP file not found');
   }
 }
-       fetch("create-checkout-session.php", {
+       fetch("paymentcheckout/create-checkout-session.php", {
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"}
       },
