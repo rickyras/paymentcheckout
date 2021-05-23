@@ -38,6 +38,21 @@
 }
 
      checkoutButton.addEventListener("click", function () {
+
+
+      const doAjax = async () => {
+  const response = await fetch('create-checkout-session.php'); // Generate the Response object
+  if (response.ok) {
+    const jsonValue = await response.json(); // Get JSON value from the response body
+    
+    console.log(jsonValue); 
+    return Promise.resolve(jsonValue);
+    
+  } else {
+    document.getElementById("root").innerHTML += 'record not found';
+    return Promise.reject('*** PHP file not found');
+  }
+}
        fetch("create-checkout-session.php", {
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"}
