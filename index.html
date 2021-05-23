@@ -26,8 +26,19 @@
     var stripe = Stripe("pk_test_51ItfJ9Dt89XNbtXp0EISWJhukhkA6UgbfsOB2sR45Ba1Tb3vv8QuLxY0zK901XkND5oy5wvjP4md4vtah5ozyvRb00UZD7j8BH");
     var checkoutButton = document.getElementById("checkout-button");
 
-    checkoutButton.addEventListener("click", function () {
-       fetch("create-checkout-session.php", {
+    const doAjax = async () => {
+  const response = await fetch('https://openlibrary.org/search.json?q='+formData.title); // Generate the Response object
+  if (response.ok) {
+    const jsonValue = await response.json(); // Get JSON value from the response body
+    return Promise.resolve(jsonValue);
+  } else {
+    document.getElementById("root").innerHTML += 'record not found';
+    return Promise.reject('*** PHP file not found');
+  }
+}
+
+     checkoutButton.addEventListener("click", function () {
+       fetch("https://rickyras.github.io/create-checkout-session.php", {
         method: "POST",
       })
         .then(function (response) {
@@ -48,6 +59,6 @@
         .catch(function (error) {
           console.error("Error:", error);
         });
-    });
+    }); */
   </script>
 </html>
