@@ -40,8 +40,7 @@
      checkoutButton.addEventListener("click", function () {
        fetch("create-checkout-session.php", {
         method: "POST",
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        headers: {"Content-type": "application/json;charset=UTF-8"}
       },
       
       )
