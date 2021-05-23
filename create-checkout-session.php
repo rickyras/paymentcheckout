@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'https://rickyras.github.io/paymentcheckout';
+$YOUR_DOMAIN = 'https://hiddengems.checkout/paymentcheckout';
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'payment_method_types' => ['card'],
@@ -14,8 +14,8 @@ $checkout_session = \Stripe\Checkout\Session::create([
       'currency' => 'usd',
       'unit_amount' => 2000,
       'product_data' => [
-        'name' => 'Stubborn Attachments',
-        'images' => ["https://i.imgur.com/EHyR2nP.png"],
+        'name' => 'F45 Class',
+        'images' => ["https://f45training.ca/wp-content/themes/f45/assets/images/f45-fb-v2.png"],
       ],
     ],
     'quantity' => 1,
